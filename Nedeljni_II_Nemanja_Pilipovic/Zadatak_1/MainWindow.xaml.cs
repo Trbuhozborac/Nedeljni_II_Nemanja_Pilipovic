@@ -24,6 +24,7 @@ namespace Zadatak_1
             {
                 MasterView view = new MasterView();
                 view.ShowDialog();
+                ClearCredentials();
                 return;
             }
             else
@@ -48,6 +49,12 @@ namespace Zadatak_1
             {
                 System.Diagnostics.Debug.WriteLine("File not found...");
             }
+        }
+
+        private void ClearCredentials()
+        {
+            txtUsername.Text = "";
+            txtPassword.Password = "";
         }
     }
 }

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MedicalInstitutionDbModelStoreContainer" CdmEntityContainer="MedicalInstitutionDbEntities">
+    <EntitySetMapping Name="tblClinicAdmins">
+      <EntityTypeMapping TypeName="MedicalInstitutionDbModel.tblClinicAdmin">
+        <MappingFragment StoreEntitySet="tblClinicAdmins">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Citizenship" ColumnName="Citizenship" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblClinicDoctors">
+      <EntityTypeMapping TypeName="MedicalInstitutionDbModel.tblClinicDoctor">
+        <MappingFragment StoreEntitySet="tblClinicDoctors">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Citizenship" ColumnName="Citizenship" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UniqueNumber" ColumnName="UniqueNumber" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="AdmissionOfPatients" ColumnName="AdmissionOfPatients" />
+          <ScalarProperty Name="FKManager" ColumnName="FKManager" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblClinicMaintances">
+      <EntityTypeMapping TypeName="MedicalInstitutionDbModel.tblClinicMaintance">
+        <MappingFragment StoreEntitySet="tblClinicMaintances">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Citizenship" ColumnName="Citizenship" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ExpendClinicPermission" ColumnName="ExpendClinicPermission" />
+          <ScalarProperty Name="InChargeOfDisabledPatientAccess" ColumnName="InChargeOfDisabledPatientAccess" />
+          <ScalarProperty Name="InChargeOfAmbulanceAccess" ColumnName="InChargeOfAmbulanceAccess" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblClinicManagers">
+      <EntityTypeMapping TypeName="MedicalInstitutionDbModel.tblClinicManager">
+        <MappingFragment StoreEntitySet="tblClinicManagers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Citizenship" ColumnName="Citizenship" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="MaxDoctorNumber" ColumnName="MaxDoctorNumber" />
+          <ScalarProperty Name="MaxPatientNumber" ColumnName="MaxPatientNumber" />
+          <ScalarProperty Name="OmissionNumber" ColumnName="OmissionNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblClinicPatients">
+      <EntityTypeMapping TypeName="MedicalInstitutionDbModel.tblClinicPatient">
+        <MappingFragment StoreEntitySet="tblClinicPatients">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Citizenship" ColumnName="Citizenship" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="HealthInsuranceNumber" ColumnName="HealthInsuranceNumber" />
+          <ScalarProperty Name="HealthInsuranceExperationDate" ColumnName="HealthInsuranceExperationDate" />
+          <ScalarProperty Name="DoctorUniqueNumber" ColumnName="DoctorUniqueNumber" />
+          <ScalarProperty Name="FKDoctor" ColumnName="FKDoctor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMedicalInstitutions">
+      <EntityTypeMapping TypeName="MedicalInstitutionDbModel.tblMedicalInstitution">
+        <MappingFragment StoreEntitySet="tblMedicalInstitutions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ConstructionDate" ColumnName="ConstructionDate" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="FloorsNumber" ColumnName="FloorsNumber" />
+          <ScalarProperty Name="PersonsPerFloor" ColumnName="PersonsPerFloor" />
+          <ScalarProperty Name="Terrace" ColumnName="Terrace" />
+          <ScalarProperty Name="Yard" ColumnName="Yard" />
+          <ScalarProperty Name="AmbulanceAccessPointNumber" ColumnName="AmbulanceAccessPointNumber" />
+          <ScalarProperty Name="DisabledPatitentAccessPointNumber" ColumnName="DisabledPatitentAccessPointNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblReports">
+      <EntityTypeMapping TypeName="MedicalInstitutionDbModel.tblReport">
+        <MappingFragment StoreEntitySet="tblReports">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="TotalTIme" ColumnName="TotalTIme" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FKClinicManager" ColumnName="FKClinicManager" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

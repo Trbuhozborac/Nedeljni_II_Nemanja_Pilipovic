@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MedicalInstitutionDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblClinicAdmin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IDNumber" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Citizenship" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tblClinicDoctor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IDNumber" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Citizenship" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UniqueNumber" Type="Int32" />
+    <Property Name="AccountNumber" Type="Int32" />
+    <Property Name="Department" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Shift" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AdmissionOfPatients" Type="Boolean" />
+    <Property Name="FKManager" Type="Int32" />
+    <NavigationProperty Name="tblClinicPatients" Relationship="Self.FK__tblClinic__FKDoc__36670980" FromRole="tblClinicDoctors" ToRole="tblClinicPatients" />
+    <NavigationProperty Name="tblClinicManager" Relationship="Self.FK__tblClinic__FKMan__3572E547" FromRole="tblClinicDoctors" ToRole="tblClinicManagers" />
+  </EntityType>
+  <EntityType Name="tblClinicMaintance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IDNumber" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Citizenship" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ExpendClinicPermission" Type="Boolean" />
+    <Property Name="InChargeOfDisabledPatientAccess" Type="Boolean" />
+    <Property Name="InChargeOfAmbulanceAccess" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tblClinicManager">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IDNumber" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Citizenship" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Floor" Type="Int32" />
+    <Property Name="MaxDoctorNumber" Type="Int32" />
+    <Property Name="MaxPatientNumber" Type="Int32" />
+    <Property Name="OmissionNumber" Type="Int32" />
+    <NavigationProperty Name="tblClinicDoctors" Relationship="Self.FK__tblClinic__FKMan__3572E547" FromRole="tblClinicManagers" ToRole="tblClinicDoctors" />
+    <NavigationProperty Name="tblReports" Relationship="Self.FK__tblReport__FKCli__375B2DB9" FromRole="tblClinicManagers" ToRole="tblReports" />
+  </EntityType>
+  <EntityType Name="tblClinicPatient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IDNumber" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Citizenship" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="HealthInsuranceNumber" Type="Int32" />
+    <Property Name="HealthInsuranceExperationDate" Type="DateTime" Precision="0" />
+    <Property Name="DoctorUniqueNumber" Type="Int32" />
+    <Property Name="FKDoctor" Type="Int32" />
+    <NavigationProperty Name="tblClinicDoctor" Relationship="Self.FK__tblClinic__FKDoc__36670980" FromRole="tblClinicPatients" ToRole="tblClinicDoctors" />
+  </EntityType>
+  <EntityType Name="tblMedicalInstitution">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ConstructionDate" Type="DateTime" Precision="0" />
+    <Property Name="Owner" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FloorsNumber" Type="Int32" />
+    <Property Name="PersonsPerFloor" Type="Int32" />
+    <Property Name="Terrace" Type="Boolean" />
+    <Property Name="Yard" Type="Boolean" />
+    <Property Name="AmbulanceAccessPointNumber" Type="Int32" />
+    <Property Name="DisabledPatitentAccessPointNumber" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblReport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="TotalTIme" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FKClinicManager" Type="Int32" />
+    <NavigationProperty Name="tblClinicManager" Relationship="Self.FK__tblReport__FKCli__375B2DB9" FromRole="tblReports" ToRole="tblClinicManagers" />
+  </EntityType>
+  <Association Name="FK__tblClinic__FKDoc__36670980">
+    <End Role="tblClinicDoctors" Type="Self.tblClinicDoctor" Multiplicity="0..1" />
+    <End Role="tblClinicPatients" Type="Self.tblClinicPatient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblClinicDoctors">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblClinicPatients">
+        <PropertyRef Name="FKDoctor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblClinic__FKMan__3572E547">
+    <End Role="tblClinicManagers" Type="Self.tblClinicManager" Multiplicity="0..1" />
+    <End Role="tblClinicDoctors" Type="Self.tblClinicDoctor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblClinicManagers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblClinicDoctors">
+        <PropertyRef Name="FKManager" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblReport__FKCli__375B2DB9">
+    <End Role="tblClinicManagers" Type="Self.tblClinicManager" Multiplicity="0..1" />
+    <End Role="tblReports" Type="Self.tblReport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblClinicManagers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblReports">
+        <PropertyRef Name="FKClinicManager" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MedicalInstitutionDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblClinicAdmins" EntityType="Self.tblClinicAdmin" />
+    <EntitySet Name="tblClinicDoctors" EntityType="Self.tblClinicDoctor" />
+    <EntitySet Name="tblClinicMaintances" EntityType="Self.tblClinicMaintance" />
+    <EntitySet Name="tblClinicManagers" EntityType="Self.tblClinicManager" />
+    <EntitySet Name="tblClinicPatients" EntityType="Self.tblClinicPatient" />
+    <EntitySet Name="tblMedicalInstitutions" EntityType="Self.tblMedicalInstitution" />
+    <EntitySet Name="tblReports" EntityType="Self.tblReport" />
+    <AssociationSet Name="FK__tblClinic__FKDoc__36670980" Association="Self.FK__tblClinic__FKDoc__36670980">
+      <End Role="tblClinicDoctors" EntitySet="tblClinicDoctors" />
+      <End Role="tblClinicPatients" EntitySet="tblClinicPatients" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblClinic__FKMan__3572E547" Association="Self.FK__tblClinic__FKMan__3572E547">
+      <End Role="tblClinicManagers" EntitySet="tblClinicManagers" />
+      <End Role="tblClinicDoctors" EntitySet="tblClinicDoctors" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblReport__FKCli__375B2DB9" Association="Self.FK__tblReport__FKCli__375B2DB9">
+      <End Role="tblClinicManagers" EntitySet="tblClinicManagers" />
+      <End Role="tblReports" EntitySet="tblReports" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

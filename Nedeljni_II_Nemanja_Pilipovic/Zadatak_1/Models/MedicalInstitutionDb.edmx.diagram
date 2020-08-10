@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8ca73e49f04247c3acc5844872dcba4c" Name="Diagram1">
+        <EntityTypeShape EntityType="MedicalInstitutionDbModel.tblClinicAdmin" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalInstitutionDbModel.tblClinicDoctor" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalInstitutionDbModel.tblClinicMaintance" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalInstitutionDbModel.tblClinicManager" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalInstitutionDbModel.tblClinicPatient" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalInstitutionDbModel.tblMedicalInstitution" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalInstitutionDbModel.tblReport" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <AssociationConnector Association="MedicalInstitutionDbModel.FK__tblClinic__FKDoc__36670980" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalInstitutionDbModel.FK__tblClinic__FKMan__3572E547" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalInstitutionDbModel.FK__tblReport__FKCli__375B2DB9" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
