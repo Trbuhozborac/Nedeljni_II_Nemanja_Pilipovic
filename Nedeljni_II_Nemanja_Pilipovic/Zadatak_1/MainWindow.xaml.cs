@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Zadatak_1.Views;
 
 namespace Zadatak_1
 {
@@ -20,9 +9,45 @@ namespace Zadatak_1
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string _username;
+        private string _password;
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            GetMasterCredentials();
+            if(_username == txtUsername.Text && _password == txtPassword.Password)
+            {
+                MasterView view = new MasterView();
+                view.ShowDialog();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Username or Password Incorrect.");
+            }
+        }
+
+        private void GetMasterCredentials()
+        {
+            string _location = @"~\..\..\..\ClientAccess.txt";
+            if (File.Exists(_location))
+            {
+                string[] usernameAndPassword = File.ReadAllLines(_location);
+                string[] usernameSplited = usernameAndPassword[0].Split(':');
+                _username = usernameSplited[1];
+
+                string[] passwrodSplited = usernameAndPassword[1].Split(':');
+                _password = passwrodSplited[1];
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("File not found...");
+            }
         }
     }
 }
