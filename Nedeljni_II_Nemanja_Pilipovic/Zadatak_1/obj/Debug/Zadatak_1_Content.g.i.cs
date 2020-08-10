@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("clientaccess.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/medicalinstitutiondb.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/medicalinstitutiondb.tt")]
 
 

@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MedicalInstitutionDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblClinicAdmins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" />
+    <Property Name="Surname" Type="varchar" MaxLength="20" />
+    <Property Name="IDNumber" Type="int" />
+    <Property Name="Gender" Type="char" MaxLength="1" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Citizenship" Type="varchar" MaxLength="20" />
+    <Property Name="Username" Type="varchar" MaxLength="20" />
+    <Property Name="Password" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tblClinicDoctors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" />
+    <Property Name="Surname" Type="varchar" MaxLength="20" />
+    <Property Name="IDNumber" Type="int" />
+    <Property Name="Gender" Type="char" MaxLength="1" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Citizenship" Type="varchar" MaxLength="20" />
+    <Property Name="Username" Type="varchar" MaxLength="20" />
+    <Property Name="Password" Type="varchar" MaxLength="20" />
+    <Property Name="UniqueNumber" Type="int" />
+    <Property Name="AccountNumber" Type="int" />
+    <Property Name="Department" Type="varchar" MaxLength="20" />
+    <Property Name="Shift" Type="varchar" MaxLength="20" />
+    <Property Name="AdmissionOfPatients" Type="bit" />
+    <Property Name="FKManager" Type="int" />
+  </EntityType>
+  <EntityType Name="tblClinicMaintances">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" />
+    <Property Name="Surname" Type="varchar" MaxLength="20" />
+    <Property Name="IDNumber" Type="int" />
+    <Property Name="Gender" Type="char" MaxLength="1" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Citizenship" Type="varchar" MaxLength="20" />
+    <Property Name="Username" Type="varchar" MaxLength="20" />
+    <Property Name="Password" Type="varchar" MaxLength="20" />
+    <Property Name="ExpendClinicPermission" Type="bit" />
+    <Property Name="InChargeOfDisabledPatientAccess" Type="bit" />
+    <Property Name="InChargeOfAmbulanceAccess" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblClinicManagers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" />
+    <Property Name="Surname" Type="varchar" MaxLength="20" />
+    <Property Name="IDNumber" Type="int" />
+    <Property Name="Gender" Type="char" MaxLength="1" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Citizenship" Type="varchar" MaxLength="20" />
+    <Property Name="Username" Type="varchar" MaxLength="20" />
+    <Property Name="Password" Type="varchar" MaxLength="20" />
+    <Property Name="Floor" Type="int" />
+    <Property Name="MaxDoctorNumber" Type="int" />
+    <Property Name="MaxPatientNumber" Type="int" />
+    <Property Name="OmissionNumber" Type="int" />
+  </EntityType>
+  <EntityType Name="tblClinicPatients">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" />
+    <Property Name="Surname" Type="varchar" MaxLength="20" />
+    <Property Name="IDNumber" Type="int" />
+    <Property Name="Gender" Type="char" MaxLength="1" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Citizenship" Type="varchar" MaxLength="20" />
+    <Property Name="Username" Type="varchar" MaxLength="20" />
+    <Property Name="Password" Type="varchar" MaxLength="20" />
+    <Property Name="HealthInsuranceNumber" Type="int" />
+    <Property Name="HealthInsuranceExperationDate" Type="date" />
+    <Property Name="DoctorUniqueNumber" Type="int" />
+    <Property Name="FKDoctor" Type="int" />
+  </EntityType>
+  <EntityType Name="tblMedicalInstitutions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" />
+    <Property Name="ConstructionDate" Type="date" />
+    <Property Name="Owner" Type="varchar" MaxLength="20" />
+    <Property Name="Address" Type="varchar" MaxLength="30" />
+    <Property Name="FloorsNumber" Type="int" />
+    <Property Name="PersonsPerFloor" Type="int" />
+    <Property Name="Terrace" Type="bit" />
+    <Property Name="Yard" Type="bit" />
+    <Property Name="AmbulanceAccessPointNumber" Type="int" />
+    <Property Name="DisabledPatitentAccessPointNumber" Type="int" />
+  </EntityType>
+  <EntityType Name="tblReports">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="date" />
+    <Property Name="TotalTIme" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="30" />
+    <Property Name="FKClinicManager" Type="int" />
+  </EntityType>
+  <Association Name="FK__tblClinic__FKDoc__36670980">
+    <End Role="tblClinicDoctors" Type="Self.tblClinicDoctors" Multiplicity="0..1" />
+    <End Role="tblClinicPatients" Type="Self.tblClinicPatients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblClinicDoctors">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblClinicPatients">
+        <PropertyRef Name="FKDoctor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblClinic__FKMan__3572E547">
+    <End Role="tblClinicManagers" Type="Self.tblClinicManagers" Multiplicity="0..1" />
+    <End Role="tblClinicDoctors" Type="Self.tblClinicDoctors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblClinicManagers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblClinicDoctors">
+        <PropertyRef Name="FKManager" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblReport__FKCli__375B2DB9">
+    <End Role="tblClinicManagers" Type="Self.tblClinicManagers" Multiplicity="0..1" />
+    <End Role="tblReports" Type="Self.tblReports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblClinicManagers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblReports">
+        <PropertyRef Name="FKClinicManager" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MedicalInstitutionDbModelStoreContainer">
+    <EntitySet Name="tblClinicAdmins" EntityType="Self.tblClinicAdmins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblClinicDoctors" EntityType="Self.tblClinicDoctors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblClinicMaintances" EntityType="Self.tblClinicMaintances" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblClinicManagers" EntityType="Self.tblClinicManagers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblClinicPatients" EntityType="Self.tblClinicPatients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMedicalInstitutions" EntityType="Self.tblMedicalInstitutions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblReports" EntityType="Self.tblReports" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tblClinic__FKDoc__36670980" Association="Self.FK__tblClinic__FKDoc__36670980">
+      <End Role="tblClinicDoctors" EntitySet="tblClinicDoctors" />
+      <End Role="tblClinicPatients" EntitySet="tblClinicPatients" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblClinic__FKMan__3572E547" Association="Self.FK__tblClinic__FKMan__3572E547">
+      <End Role="tblClinicManagers" EntitySet="tblClinicManagers" />
+      <End Role="tblClinicDoctors" EntitySet="tblClinicDoctors" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblReport__FKCli__375B2DB9" Association="Self.FK__tblReport__FKCli__375B2DB9">
+      <End Role="tblClinicManagers" EntitySet="tblClinicManagers" />
+      <End Role="tblReports" EntitySet="tblReports" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
