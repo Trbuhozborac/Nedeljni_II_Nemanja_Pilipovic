@@ -32,7 +32,18 @@ namespace Zadatak_1.ViewModels
 
         #region Commands
 
-        //TODO update klinike da li ce moci vise ili samo jednu
+        private ICommand updateHospital;
+        public ICommand UpdateHospital
+        {
+            get
+            {
+                if (updateHospital == null)
+                {
+                    updateHospital = new RelayCommand(param => UpdateHospitalExecute(), param => CanUpdateHospitalExecute());
+                }
+                return updateHospital;
+            }
+        }
 
         private ICommand createMaintance;
         public ICommand CreateMaintance
@@ -59,6 +70,29 @@ namespace Zadatak_1.ViewModels
         }
 
         private bool CanCreateMaintanceExecute()
+        {
+            return true;
+        }
+
+        private void UpdateHospitalExecute()
+        {
+            tblMedicalInstitution institution = new tblMedicalInstitution();
+            try
+            {
+                using (MedicalInstitutionDbEntities db = new MedicalInstitutionDbEntities())
+                {
+                    institution = db.tblMedicalInstitutions.Where(i => i.Id > 0).FirstOrDefault();
+                }
+                UpdateHospitalView view = new UpdateHospitalView(institution);
+                view.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+        }
+
+        private bool CanUpdateHospitalExecute()
         {
             return true;
         }

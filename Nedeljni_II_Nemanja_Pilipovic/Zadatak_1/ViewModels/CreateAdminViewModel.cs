@@ -100,7 +100,7 @@ namespace Zadatak_1.ViewModels
         #region Functions
 
          private void SaveExecute()
-        {
+         {
             try
             {
                 Admin.Gender = Gender;
