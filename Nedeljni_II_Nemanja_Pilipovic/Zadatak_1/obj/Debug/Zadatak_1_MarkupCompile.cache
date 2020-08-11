@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\App.xaml
-3-2008902358
+7-762094108
 21769798553
-21-2134768778
+30-1509027793
 181788474188
-MainWindow.xaml;Views\CreateAdminView.xaml;Views\MasterView.xaml;
+MainWindow.xaml;Views\AdminView.xaml;Views\CreateAdminView.xaml;Views\CreateMaintanceView.xaml;Views\CreateMedicalInstitutionView.xaml;Views\MasterView.xaml;Views\UpdateHospitalView.xaml;
 
 False
 

@@ -8,20 +8,20 @@ using Zadatak_1.Views;
 
 namespace Zadatak_1.ViewModels
 {
-    class CreateAdminViewModel : BaseViewModel
+    class CreateMaintanceViewModel : BaseViewModel
     {
         #region Objects
 
-        CreateAdminView adminView;
+        CreateMaintanceView createMaintance;
 
         #endregion
 
         #region Constructors
 
-        public CreateAdminViewModel(CreateAdminView adminViewOpen)
+        public CreateMaintanceViewModel(CreateMaintanceView createMaintanceOpen)
         {
-            adminView = adminViewOpen;
-            Admin = new tblClinicAdmin();
+            createMaintance = createMaintanceOpen;
+            Maintance = new tblClinicMaintance();
             Genders = GetBothGender();
         }
 
@@ -29,15 +29,15 @@ namespace Zadatak_1.ViewModels
 
         #region Properties
 
-        private tblClinicAdmin admin;
+        private tblClinicMaintance maintance;
 
-        public tblClinicAdmin Admin
+        public tblClinicMaintance Maintance
         {
-            get { return admin; }
+            get { return maintance; }
             set 
             {
-                admin = value;
-                OnPropertyChanged("Admin");
+                maintance = value;
+                OnPropertyChanged("Maintance");
             }
         }
 
@@ -46,7 +46,7 @@ namespace Zadatak_1.ViewModels
         public string Gender
         {
             get { return gender; }
-            set 
+            set
             {
                 gender = value;
                 OnPropertyChanged("Gender");
@@ -65,9 +65,11 @@ namespace Zadatak_1.ViewModels
             }
         }
 
+
         #endregion
 
         #region Commands
+
 
         private ICommand save;
         public ICommand Save
@@ -95,22 +97,40 @@ namespace Zadatak_1.ViewModels
             }
         }
 
+
         #endregion
 
         #region Functions
 
-         private void SaveExecute()
-         {
+        private List<string> GetBothGender()
+        {
+            List<string> genders = new List<string>();
+            genders.Add("M");
+            genders.Add("F");
+            return genders;
+        }
+
+        private void SaveExecute()
+        {
             try
             {
-                Admin.Gender = Gender;
-                using (MedicalInstitutionDbEntities db = new MedicalInstitutionDbEntities()) 
+                Maintance.Gender = Gender;
+                if (Maintance.InChargeOfDisabledPatientAccess == true)
                 {
-                    db.tblClinicAdmins.Add(Admin);
+                    Maintance.InChargeOfAmbulanceAccess = false;
+                }
+                else
+                {
+                    Maintance.InChargeOfAmbulanceAccess = true;
+                }
+
+                using (MedicalInstitutionDbEntities db = new MedicalInstitutionDbEntities())
+                {
+                    db.tblClinicMaintances.Add(Maintance);
                     db.SaveChanges();
                 }
-                MessageBox.Show("Admin Created Successfully!");
-                adminView.Close();
+                MessageBox.Show("Clinic Maintance added Successfully!");
+                createMaintance.Close();
             }
             catch (Exception ex)
             {
@@ -120,10 +140,10 @@ namespace Zadatak_1.ViewModels
 
         private bool CanSaveExecute()
         {
-            if (String.IsNullOrEmpty(Admin.Name) || String.IsNullOrEmpty(Admin.Surname) || String.IsNullOrEmpty(Admin.IDNumber.ToString())
-                || String.IsNullOrEmpty(Gender) || String.IsNullOrEmpty(Admin.DateOfBirth.ToString()) 
-                || String.IsNullOrEmpty(Admin.Citizenship)
-                || String.IsNullOrEmpty(Admin.Username) || String.IsNullOrEmpty(Admin.Password))
+            if (String.IsNullOrEmpty(Maintance.Name) || String.IsNullOrEmpty(Maintance.Surname) || String.IsNullOrEmpty(Maintance.IDNumber.ToString())
+                || String.IsNullOrEmpty(Gender) || String.IsNullOrEmpty(Maintance.DateOfBirth.ToString())
+                || String.IsNullOrEmpty(Maintance.Citizenship)
+                || String.IsNullOrEmpty(Maintance.Username) || String.IsNullOrEmpty(Maintance.Password))
             {
                 return false;
             }
@@ -135,22 +155,13 @@ namespace Zadatak_1.ViewModels
 
         private void CloseExecute()
         {
-            adminView.Close();
+            createMaintance.Close();
         }
 
         private bool CanCloseExecute()
         {
             return true;
         }
-
-        private List<string> GetBothGender()
-        {
-            List<string> genders = new List<string>();
-            genders.Add("M");
-            genders.Add("F");
-            return genders;
-        }
-
         #endregion
     }
 }
