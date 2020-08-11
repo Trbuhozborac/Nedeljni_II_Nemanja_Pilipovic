@@ -23,3 +23,7 @@ C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Deb
 C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Zadatak_1_Content.g.cs
 C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\CreateAdminView.baml
 C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Zadatak_1.csproj.CopyComplete
+C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\AdminView.g.cs
+C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\AdminView.baml
+C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\CreateMedicalInstitutionView.g.cs
+C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\CreateMedicalInstitutionView.baml
