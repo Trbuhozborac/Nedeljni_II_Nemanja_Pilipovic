@@ -104,6 +104,7 @@
     <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CreateAdminViewModel.cs" />
+    <Compile Include="ViewModels\CreateMaintanceViewModel.cs" />
     <Compile Include="ViewModels\CreateMedicalInstitutionViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />
     <Compile Include="Views\AdminView.xaml.cs">
@@ -111,6 +112,9 @@
     </Compile>
     <Compile Include="Views\CreateAdminView.xaml.cs">
       <DependentUpon>CreateAdminView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateMaintanceView.xaml.cs">
+      <DependentUpon>CreateMaintanceView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CreateMedicalInstitutionView.xaml.cs">
       <DependentUpon>CreateMedicalInstitutionView.xaml</DependentUpon>
@@ -136,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CreateAdminView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateMaintanceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
