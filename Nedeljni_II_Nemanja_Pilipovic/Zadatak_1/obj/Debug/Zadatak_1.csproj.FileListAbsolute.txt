@@ -31,3 +31,7 @@ C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Deb
 C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\CreateMaintanceView.baml
 C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\UpdateHospitalView.g.cs
 C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\UpdateHospitalView.baml
+C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\MaintanceView.g.cs
+C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\MaintanceView.baml
+C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\UpdateMaintanceView.g.cs
+C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\UpdateMaintanceView.baml

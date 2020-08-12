@@ -9,26 +9,31 @@ using Zadatak_1.Views;
 
 namespace Zadatak_1.ViewModels
 {
-    class CreateMaintanceViewModel : BaseViewModel
+    class UpdateMaintanceViewModel : BaseViewModel
     {
         #region Objects
 
-        CreateMaintanceView createMaintance;
+        UpdateMaintanceView updateView;
 
         #endregion
 
         #region Constructors
 
-        public CreateMaintanceViewModel(CreateMaintanceView createMaintanceOpen)
+        public UpdateMaintanceViewModel(UpdateMaintanceView updateViewOpen)
         {
-            createMaintance = createMaintanceOpen;
-            Maintance = new tblClinicMaintance();
+            updateView = updateViewOpen;
+        }
+
+        public UpdateMaintanceViewModel(UpdateMaintanceView updateViewOpen, tblClinicMaintance updateMaintance)
+        {
+            updateView = updateViewOpen;
+            Maintance = updateMaintance;
             Genders = GetBothGender();
         }
 
         #endregion
 
-        #region Properties
+        #region Proeprties
 
         private tblClinicMaintance maintance;
 
@@ -59,7 +64,7 @@ namespace Zadatak_1.ViewModels
         public List<string> Genders
         {
             get { return genders; }
-            set 
+            set
             {
                 genders = value;
                 OnPropertyChanged("Genders");
@@ -70,7 +75,6 @@ namespace Zadatak_1.ViewModels
         #endregion
 
         #region Commands
-
 
         private ICommand save;
         public ICommand Save
@@ -98,7 +102,6 @@ namespace Zadatak_1.ViewModels
             }
         }
 
-
         #endregion
 
         #region Functions
@@ -111,45 +114,31 @@ namespace Zadatak_1.ViewModels
             return genders;
         }
 
+
         private void SaveExecute()
         {
-            Queue<tblClinicMaintance> maintances = new Queue<tblClinicMaintance>();
-
             try
             {
-                Maintance.Gender = Gender;
-                if (Maintance.InChargeOfDisabledPatientAccess == true)
+                tblClinicMaintance updateMaintance = new tblClinicMaintance();
+                using (MedicalInstitutionDbEntities db = new MedicalInstitutionDbEntities()) 
                 {
-                    Maintance.InChargeOfAmbulanceAccess = false;
-                }
-                else
-                {
-                    Maintance.InChargeOfAmbulanceAccess = true;
-                }
+                    updateMaintance = db.tblClinicMaintances.Where(m => m.Id == Maintance.Id).FirstOrDefault();
 
-                using (MedicalInstitutionDbEntities db = new MedicalInstitutionDbEntities())
-                {
-                    foreach (tblClinicMaintance maintance in db.tblClinicMaintances)
-                    {
-                        maintances.Enqueue(maintance);
-                    }
+                    updateMaintance.Name = Maintance.Name;
+                    updateMaintance.Surname = Maintance.Surname;
+                    updateMaintance.IDNumber = Maintance.IDNumber;
+                    updateMaintance.Gender = Maintance.Gender;
+                    updateMaintance.DateOfBirth = Maintance.DateOfBirth;
+                    updateMaintance.Citizenship = Maintance.Citizenship;
+                    updateMaintance.Username = Maintance.Password;
+                    updateMaintance.ExpendClinicPermission = Maintance.ExpendClinicPermission;
+                    updateMaintance.InChargeOfAmbulanceAccess = Maintance.InChargeOfAmbulanceAccess;
+                    updateMaintance.InChargeOfDisabledPatientAccess = Maintance.InChargeOfDisabledPatientAccess;
 
-                    if (maintances.Count < 3)
-                    {
-                        db.tblClinicMaintances.Add(Maintance);
-                        db.SaveChanges();
-                    }
-                    else
-                    {
-                        tblClinicMaintance m =  maintances.Dequeue();
-                        db.tblClinicMaintances.Remove(m);
-                        db.tblClinicMaintances.Add(Maintance);
-                        db.SaveChanges();
-                    }
+                    db.SaveChanges();
                 }
-               
-                MessageBox.Show("Clinic Maintance added Successfully!");
-                createMaintance.Close();
+                MessageBox.Show("Maintance Updated Successfully!");
+                updateView.Close();
             }
             catch (Exception ex)
             {
@@ -174,15 +163,13 @@ namespace Zadatak_1.ViewModels
 
         private void CloseExecute()
         {
-            createMaintance.Close();
+            updateView.Close();
         }
 
         private bool CanCloseExecute()
         {
             return true;
         }
-
-  
 
         #endregion
     }
