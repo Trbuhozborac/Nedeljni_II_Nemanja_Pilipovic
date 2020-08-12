@@ -12,7 +12,7 @@ namespace Zadatak_1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblClinicMaintance
+    public partial class tblClinicMaintance : IUser
     {
         public int Id { get; set; }
         public string Name { get; set; }

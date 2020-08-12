@@ -108,6 +108,7 @@
     <Compile Include="ViewModels\CreateMedicalInstitutionViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />
     <Compile Include="ViewModels\UpdateHospitalViewModel.cs" />
+    <Compile Include="ViewModels\UpdateMaintanceViewModel.cs" />
     <Compile Include="Views\AdminView.xaml.cs">
       <DependentUpon>AdminView.xaml</DependentUpon>
     </Compile>
@@ -120,11 +121,17 @@
     <Compile Include="Views\CreateMedicalInstitutionView.xaml.cs">
       <DependentUpon>CreateMedicalInstitutionView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MaintanceView.xaml.cs">
+      <DependentUpon>MaintanceView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MasterView.xaml.cs">
       <DependentUpon>MasterView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UpdateHospitalView.xaml.cs">
       <DependentUpon>UpdateHospitalView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateMaintanceView.xaml.cs">
+      <DependentUpon>UpdateMaintanceView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -155,11 +162,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\MaintanceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MasterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UpdateHospitalView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateMaintanceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
