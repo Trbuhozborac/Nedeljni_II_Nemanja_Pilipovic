@@ -16,10 +16,10 @@ namespace Zadatak_1.Models
     {
         public int Id { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<int> TotalTIme { get; set; }
+        public Nullable<int> TotalTime { get; set; }
         public string Description { get; set; }
-        public Nullable<int> FKClinicManager { get; set; }
+        public Nullable<int> FKClinicMaintance { get; set; }
     
-        public virtual tblClinicManager tblClinicManager { get; set; }
+        public virtual tblClinicMaintance tblClinicMaintance { get; set; }
     }
 }

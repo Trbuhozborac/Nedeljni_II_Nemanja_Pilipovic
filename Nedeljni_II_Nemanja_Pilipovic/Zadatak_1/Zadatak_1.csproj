@@ -238,21 +238,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Resource Include="ClientAccess.txt" />
-  </ItemGroup>
   <ItemGroup>
     <Content Include="Models\MedicalInstitutionDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MedicalInstitutionDb.Context.cs</LastGenOutput>
       <DependentUpon>MedicalInstitutionDb.edmx</DependentUpon>
+      <LastGenOutput>MedicalInstitutionDb.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\MedicalInstitutionDb.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MedicalInstitutionDb.edmx</DependentUpon>
       <LastGenOutput>MedicalInstitutionDb.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ClientAccess.txt" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

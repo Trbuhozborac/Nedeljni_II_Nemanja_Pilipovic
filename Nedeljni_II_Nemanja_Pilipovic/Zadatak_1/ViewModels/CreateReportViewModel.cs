@@ -98,7 +98,7 @@ namespace Zadatak_1.ViewModels
             try
             {
                 Report.Date = DateTime.Today;
-                Report.FKClinicManager = User.Id;
+                Report.FKClinicMaintance = User.Id;
 
                 using (MedicalInstitutionDbEntities db = new MedicalInstitutionDbEntities())
                 {
@@ -117,7 +117,7 @@ namespace Zadatak_1.ViewModels
 
         private bool CanSaveExecute()
         {
-            if (string.IsNullOrEmpty(Report.TotalTIme.ToString()) || string.IsNullOrEmpty(Report.Description))
+            if (string.IsNullOrEmpty(Report.TotalTime.ToString()) || string.IsNullOrEmpty(Report.Description))
             {
                 return false;
             }

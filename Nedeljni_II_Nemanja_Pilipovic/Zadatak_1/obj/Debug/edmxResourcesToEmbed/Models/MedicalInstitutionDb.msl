@@ -115,9 +115,9 @@
         <MappingFragment StoreEntitySet="tblReports">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="TotalTIme" ColumnName="TotalTIme" />
+          <ScalarProperty Name="TotalTime" ColumnName="TotalTime" />
           <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="FKClinicManager" ColumnName="FKClinicManager" />
+          <ScalarProperty Name="FKClinicMaintance" ColumnName="FKClinicMaintance" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

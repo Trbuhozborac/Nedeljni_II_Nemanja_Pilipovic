@@ -96,7 +96,7 @@ namespace Zadatak_1.ViewModels
                 {
                     foreach (tblReport report in db.tblReports)
                     {
-                        if(report.FKClinicManager == User.Id)
+                        if(report.FKClinicMaintance == User.Id)
                         {
                             reports.Add(report);
                         }

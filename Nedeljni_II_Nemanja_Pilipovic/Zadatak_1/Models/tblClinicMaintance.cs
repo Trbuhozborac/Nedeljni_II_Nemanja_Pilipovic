@@ -14,6 +14,12 @@ namespace Zadatak_1.Models
     
     public partial class tblClinicMaintance : IUser
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tblClinicMaintance()
+        {
+            this.tblReports = new HashSet<tblReport>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -26,5 +32,8 @@ namespace Zadatak_1.Models
         public Nullable<bool> ExpendClinicPermission { get; set; }
         public Nullable<bool> InChargeOfDisabledPatientAccess { get; set; }
         public Nullable<bool> InChargeOfAmbulanceAccess { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblReport> tblReports { get; set; }
     }
 }
