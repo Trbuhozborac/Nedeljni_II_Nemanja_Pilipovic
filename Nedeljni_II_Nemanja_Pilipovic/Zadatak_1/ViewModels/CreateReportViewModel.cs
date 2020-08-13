@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 using Zadatak_1.Commands;
@@ -108,6 +109,7 @@ namespace Zadatak_1.ViewModels
 
                 MessageBox.Show("Report Added Successfully!");
                 reportView.Close();
+                WriteUsersReportToFile();
             }
             catch (Exception ex)
             {
@@ -135,6 +137,17 @@ namespace Zadatak_1.ViewModels
         private bool CanCloseExecute()
         {
             return true;
+        }
+
+        private void WriteUsersReportToFile()
+        {
+            string location = $@"~\..\..\..\{User.Name}.{User.Surname}.txt";
+
+            using (StreamWriter sw = new StreamWriter(location))
+            {
+                sw.WriteLine("[Date: {0}] [Total time: {1}] [Desciption: {2}]",
+              Report.Date, Report.TotalTime, Report.Description);
+            }          
         }
 
         #endregion

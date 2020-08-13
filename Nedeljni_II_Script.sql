@@ -18,7 +18,6 @@ DROP TABLE tblClinicDoctors
 IF EXISTS (SELECT NAME FROM sys.sysobjects WHERE NAME = 'tblClinicManagers')
 DROP TABLE tblClinicManagers
 
-
 CREATE TABLE tblMedicalInstitutions
 (
 Id int PRIMARY KEY IDENTITY (1,1),
