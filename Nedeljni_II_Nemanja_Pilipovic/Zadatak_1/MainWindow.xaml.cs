@@ -103,6 +103,7 @@ namespace Zadatak_1
             if(_logged == false)
             {
                 MessageBox.Show("Username or Password Incorrect.");
+                ClearCredentials();
                 //TODO kad se ulogujes i logautujes pa kad ukucas pogresne kredencijale nista se ne desava
             }
             
