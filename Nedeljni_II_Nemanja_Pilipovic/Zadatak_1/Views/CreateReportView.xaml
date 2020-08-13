@@ -1,0 +1,45 @@
+﻿<Window x:Class="Zadatak_1.Views.CreateReportView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zadatak_1.Views"
+        mc:Ignorable="d"
+        Title="Report" Height="300" Width="275">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="Total Time: -Minutes-"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Report.TotalTIme, UpdateSourceTrigger=PropertyChanged}"
+                 PreviewTextInput="NumberValidationTextBox" MaxLength="5"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="Decription:" Margin="0,10,0,0"/>
+        <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding Report.Description, UpdateSourceTrigger=PropertyChanged}"
+                 PreviewTextInput="LetterAndNumberValidationTextBox" MaxLength="30"/>
+
+        <Button Grid.Column="1" Grid.Row="5" Name="btnSave" Content="Confirm" Height="20" Width="100" HorizontalAlignment="Center"
+                Command="{Binding Save, UpdateSourceTrigger=PropertyChanged}" Margin="0,10,0,0"/>
+
+
+        <Button Grid.Column="1" Grid.Row="6" Name="btnClose" Content="Close" Height="20" Width="100" HorizontalAlignment="Center"
+                Command="{Binding Close, UpdateSourceTrigger=PropertyChanged}" Margin="0,10,0,0"/>
+
+    </Grid>
+</Window>

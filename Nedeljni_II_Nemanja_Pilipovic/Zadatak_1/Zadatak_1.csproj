@@ -107,6 +107,8 @@
     <Compile Include="ViewModels\CreateMaintanceViewModel.cs" />
     <Compile Include="ViewModels\CreateManagerViewModel.cs" />
     <Compile Include="ViewModels\CreateMedicalInstitutionViewModel.cs" />
+    <Compile Include="ViewModels\CreateReportViewModel.cs" />
+    <Compile Include="ViewModels\MaintanceViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />
     <Compile Include="ViewModels\UpdateHospitalViewModel.cs" />
     <Compile Include="ViewModels\UpdateMaintanceViewModel.cs" />
@@ -125,6 +127,9 @@
     </Compile>
     <Compile Include="Views\CreateMedicalInstitutionView.xaml.cs">
       <DependentUpon>CreateMedicalInstitutionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateReportView.xaml.cs">
+      <DependentUpon>CreateReportView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MaintanceView.xaml.cs">
       <DependentUpon>MaintanceView.xaml</DependentUpon>
@@ -171,6 +176,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CreateMedicalInstitutionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateReportView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
