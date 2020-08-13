@@ -23,7 +23,7 @@ namespace Zadatak_1.ViewModels
         {
             adminView = adminViewOpen;
             AllMaintances = GetAllMaintances();
-            
+            AllManagers = GetAllManagers();
         }
 
         #endregion
@@ -54,9 +54,48 @@ namespace Zadatak_1.ViewModels
             }
         }
 
+        private tblClinicManager manager;
+
+        public tblClinicManager Manager
+        {
+            get { return manager; }
+            set 
+            { 
+                manager = value;
+                OnPropertyChanged("Manager");
+            }
+        }
+
+        private List<tblClinicManager> allManagers;
+
+        public List<tblClinicManager> AllManagers
+        {
+            get { return allManagers; }
+            set 
+            {
+                allManagers = value;
+                OnPropertyChanged("AllManagers");
+            }
+        }
+
+
         #endregion
 
         #region Commands
+
+        private ICommand createManager;
+        public ICommand CreateManager
+        {
+            get
+            {
+                if (createManager == null)
+                {
+                    createManager = new RelayCommand(param => CreateManagerExecute(), param => CanCreateManagerExecute());
+                }
+                return createManager;
+            }
+        }
+
 
         private ICommand createMaintance;
         public ICommand CreateMaintance
@@ -121,6 +160,32 @@ namespace Zadatak_1.ViewModels
                     logout = new RelayCommand(param => LogoutExecute(), param => CanLogoutExecute());
                 }
                 return logout;
+            }
+        }
+
+        private ICommand updateManager;
+        public ICommand UpdateManager
+        {
+            get
+            {
+                if (updateManager == null)
+                {
+                    updateManager = new RelayCommand(param => UpdateManagerExecute(), param => CanUpdateManagerExecute());
+                }
+                return updateManager;
+            }
+        }
+
+        private ICommand deleteManager;
+        public ICommand DeleteManager
+        {
+            get
+            {
+                if (deleteManager == null)
+                {
+                    deleteManager = new RelayCommand(param => DeleteManagerExecute(), param => CanDeleteManagerExecute());
+                }
+                return deleteManager;
             }
         }
 
@@ -235,6 +300,81 @@ namespace Zadatak_1.ViewModels
         }
 
         private bool CanLogoutExecute()
+        {
+            return true;
+        }
+
+        private void CreateManagerExecute()
+        {
+            CreateManagerView view = new CreateManagerView();
+            view.ShowDialog();
+            AllManagers = GetAllManagers();
+        }
+
+        private bool CanCreateManagerExecute()
+        {
+            return true;
+        }
+
+        private List<tblClinicManager> GetAllManagers()
+        {
+            List<tblClinicManager> managers = new List<tblClinicManager>();
+
+            try
+            {
+                using (MedicalInstitutionDbEntities db = new MedicalInstitutionDbEntities())
+                {
+                    managers = db.tblClinicManagers.Where(m => m.Id > 0).ToList();
+                    return managers;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
+        private void UpdateManagerExecute()
+        {
+            UpdateManagerView view = new UpdateManagerView(Manager);
+            view.ShowDialog();
+            AllManagers = GetAllManagers();
+        }
+
+        private bool CanUpdateManagerExecute()
+        {
+            return true;
+        }
+
+        private void DeleteManagerExecute()
+        {
+            try
+            {
+                MessageBoxResult result = MessageBox.Show("Are you Sure?", "Confirm Deleting", MessageBoxButton.YesNo);
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        using (MedicalInstitutionDbEntities db = new MedicalInstitutionDbEntities())
+                        {
+                            tblClinicManager manager = db.tblClinicManagers.Where(m => m.Id == Manager.Id).First();
+                            db.tblClinicManagers.Remove(manager);
+                            db.SaveChanges();
+                        }
+                        MessageBox.Show("Manager Deleted.");
+                        AllManagers = GetAllManagers();
+                        break;
+                    case MessageBoxResult.No:
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+        }
+
+        private bool CanDeleteManagerExecute()
         {
             return true;
         }

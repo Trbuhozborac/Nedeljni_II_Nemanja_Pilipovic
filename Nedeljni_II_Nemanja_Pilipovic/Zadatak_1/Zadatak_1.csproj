@@ -105,10 +105,12 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CreateAdminViewModel.cs" />
     <Compile Include="ViewModels\CreateMaintanceViewModel.cs" />
+    <Compile Include="ViewModels\CreateManagerViewModel.cs" />
     <Compile Include="ViewModels\CreateMedicalInstitutionViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />
     <Compile Include="ViewModels\UpdateHospitalViewModel.cs" />
     <Compile Include="ViewModels\UpdateMaintanceViewModel.cs" />
+    <Compile Include="ViewModels\UpdateManagerViewModel.cs" />
     <Compile Include="Views\AdminView.xaml.cs">
       <DependentUpon>AdminView.xaml</DependentUpon>
     </Compile>
@@ -117,6 +119,9 @@
     </Compile>
     <Compile Include="Views\CreateMaintanceView.xaml.cs">
       <DependentUpon>CreateMaintanceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateManagerView.xaml.cs">
+      <DependentUpon>CreateManagerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CreateMedicalInstitutionView.xaml.cs">
       <DependentUpon>CreateMedicalInstitutionView.xaml</DependentUpon>
@@ -132,6 +137,9 @@
     </Compile>
     <Compile Include="Views\UpdateMaintanceView.xaml.cs">
       <DependentUpon>UpdateMaintanceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateManagerView.xaml.cs">
+      <DependentUpon>UpdateManagerView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -158,6 +166,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\CreateManagerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CreateMedicalInstitutionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,6 +187,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UpdateMaintanceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateManagerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

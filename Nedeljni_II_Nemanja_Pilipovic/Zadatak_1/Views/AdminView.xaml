@@ -23,11 +23,10 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-
-       
-
 
         <Button Grid.Column="1" Grid.Row="1" Name="btnUpdateHospital" Content="Update Medical Institution" 
                 Height="20" Width="200" HorizontalAlignment="Left"
@@ -55,7 +54,7 @@
                     <DataGridTextColumn Header="Date of Birth" Binding="{Binding DateOfBirth }"/>
                     <DataGridTextColumn Header="Citizenship " Binding="{Binding Citizenship }"/>
                     <DataGridTextColumn Header="Username" Binding="{Binding Username}"/>
-                    <DataGridTextColumn Header="Password" Binding="{Binding UserPassword}"/>
+                    <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
                     <DataGridTextColumn Header="Charge Of Disabled Patient Access" Binding="{Binding InChargeOfDisabledPatientAccess }"/>
                     <DataGridTextColumn Header="Charge Of Ambulance Access " Binding="{Binding InChargeOfAmbulanceAccess }"/>
 
@@ -90,6 +89,49 @@
         <Button Grid.Column="1" Grid.Row="6" Name="btnCreateManager" Content="Create Manager" 
                 Height="20" Width="200" HorizontalAlignment="Left"
                 Command="{Binding CreateManager, UpdateSourceTrigger=PropertyChanged}" Margin="0,10,0,0"/>
-        
+
+        <Grid Grid.Column="1" Grid.Row="7" Height="auto" Width="auto" Grid.ColumnSpan="3">
+            <DataGrid x:Name="dgAllManagers" ItemsSource="{Binding AllManagers, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False"
+                      IsReadOnly="True" HeadersVisibility="Column" Margin="0,10,0,0"
+                      SelectedItem="{Binding Manager, UpdateSourceTrigger=PropertyChanged}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Surname" Binding="{Binding Surname}"/>
+                    <DataGridTextColumn Header="ID Number" Binding="{Binding IDNumber}"/>
+                    <DataGridTextColumn Header="Gender" Binding="{Binding Gender}"/>
+                    <DataGridTextColumn Header="Date of Birth" Binding="{Binding DateOfBirth }"/>
+                    <DataGridTextColumn Header="Citizenship " Binding="{Binding Citizenship }"/>
+                    <DataGridTextColumn Header="Username" Binding="{Binding Username}"/>
+                    <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
+                    <DataGridTextColumn Header="Max Doctor Number" Binding="{Binding MaxDoctorNumber }"/>
+                    <DataGridTextColumn Header="Max Patient Number" Binding="{Binding MaxPatientNumber }"/>
+                    <DataGridTextColumn Header="Floor" Binding="{Binding Floor }"/>
+
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="btnUpdateManager" Content="Update"
+                                    Command="{Binding DataContext.UpdateManager, UpdateSourceTrigger=PropertyChanged, 
+                                RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
+                                    Margin="4" FontWeight="Bold"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="btnDeleteManager" Content="Delete"
+                                    Command="{Binding DataContext.DeleteManager, UpdateSourceTrigger=PropertyChanged, 
+                                RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
+                                    Margin="4" FontWeight="Bold"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
     </Grid>
 </Window>
