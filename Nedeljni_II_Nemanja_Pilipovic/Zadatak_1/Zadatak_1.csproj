@@ -107,6 +107,8 @@
     <Compile Include="ViewModels\CreateMaintanceViewModel.cs" />
     <Compile Include="ViewModels\CreateManagerViewModel.cs" />
     <Compile Include="ViewModels\CreateMedicalInstitutionViewModel.cs" />
+    <Compile Include="ViewModels\CreateReportViewModel.cs" />
+    <Compile Include="ViewModels\MaintanceViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />
     <Compile Include="ViewModels\UpdateHospitalViewModel.cs" />
     <Compile Include="ViewModels\UpdateMaintanceViewModel.cs" />
@@ -125,6 +127,9 @@
     </Compile>
     <Compile Include="Views\CreateMedicalInstitutionView.xaml.cs">
       <DependentUpon>CreateMedicalInstitutionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateReportView.xaml.cs">
+      <DependentUpon>CreateReportView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MaintanceView.xaml.cs">
       <DependentUpon>MaintanceView.xaml</DependentUpon>
@@ -171,6 +176,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CreateMedicalInstitutionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateReportView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -229,21 +238,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Resource Include="ClientAccess.txt" />
-  </ItemGroup>
   <ItemGroup>
     <Content Include="Models\MedicalInstitutionDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MedicalInstitutionDb.Context.cs</LastGenOutput>
       <DependentUpon>MedicalInstitutionDb.edmx</DependentUpon>
+      <LastGenOutput>MedicalInstitutionDb.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\MedicalInstitutionDb.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MedicalInstitutionDb.edmx</DependentUpon>
       <LastGenOutput>MedicalInstitutionDb.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ClientAccess.txt" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

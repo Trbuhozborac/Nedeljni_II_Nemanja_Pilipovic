@@ -39,3 +39,5 @@ C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Deb
 C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\CreateManagerView.baml
 C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\UpdateManagerView.g.cs
 C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\UpdateManagerView.baml
+C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\CreateReportView.g.cs
+C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\Views\CreateReportView.baml

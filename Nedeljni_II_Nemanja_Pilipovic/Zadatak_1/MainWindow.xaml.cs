@@ -49,6 +49,10 @@ namespace Zadatak_1
                         {
                             users.Add(maintance as IUser);
                         }
+                        foreach (tblClinicManager manager in db.tblClinicManagers)
+                        {
+                            users.Add(manager as IUser);
+                        }
                         //TODO treba proci kroz ostale vrste korisnika
                     }
 
@@ -77,10 +81,14 @@ namespace Zadatak_1
                             else if(user is tblClinicMaintance)
                             {
                                 _logged = true;
-                                MaintanceView view = new MaintanceView();
+                                MaintanceView view = new MaintanceView(user as tblClinicMaintance); ;
                                 view.ShowDialog();
                                 ClearCredentials();
                                 return;
+                            }
+                            else if(user is tblClinicManager)
+                            {
+                                
                             }
                             //TODO ovde ide provera za ostale tipove
                         }

@@ -12,13 +12,12 @@ namespace Zadatak_1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblClinicManager
+    public partial class tblClinicManager : IUser
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblClinicManager()
         {
             this.tblClinicDoctors = new HashSet<tblClinicDoctor>();
-            this.tblReports = new HashSet<tblReport>();
         }
     
         public int Id { get; set; }
@@ -37,7 +36,5 @@ namespace Zadatak_1.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblClinicDoctor> tblClinicDoctors { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblReport> tblReports { get; set; }
     }
 }
