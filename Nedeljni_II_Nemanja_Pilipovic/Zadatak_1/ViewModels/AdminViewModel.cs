@@ -58,6 +58,19 @@ namespace Zadatak_1.ViewModels
 
         #region Commands
 
+        private ICommand createMaintance;
+        public ICommand CreateMaintance
+        {
+            get
+            {
+                if (createMaintance == null)
+                {
+                    createMaintance = new RelayCommand(param => CreateMaintanceExecute(), param => CanCreateMaintanceExecute());
+                }
+                return createMaintance;
+            }
+        }
+
         private ICommand updateHospital;
         public ICommand UpdateHospital
         {
@@ -119,6 +132,7 @@ namespace Zadatak_1.ViewModels
         {
             CreateMaintanceView view = new CreateMaintanceView();
             view.ShowDialog();
+            AllMaintances = GetAllMaintances();
         }
 
         private bool CanCreateMaintanceExecute()
