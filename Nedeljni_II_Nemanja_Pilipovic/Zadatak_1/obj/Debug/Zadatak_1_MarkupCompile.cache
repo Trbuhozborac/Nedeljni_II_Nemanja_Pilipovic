@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\App.xaml
-121717551331
+15816763587
 21769798553
-40-461257227
+46-709655581
 181788474188
-MainWindow.xaml;Views\AdminView.xaml;Views\CreateAdminView.xaml;Views\CreateMaintanceView.xaml;Views\CreateManagerView.xaml;Views\CreateMedicalInstitutionView.xaml;Views\CreateReportView.xaml;Views\MaintanceView.xaml;Views\MasterView.xaml;Views\UpdateHospitalView.xaml;Views\UpdateMaintanceView.xaml;Views\UpdateManagerView.xaml;
+MainWindow.xaml;Views\AdminView.xaml;Views\CreateAdminView.xaml;Views\CreateDoctorView.xaml;Views\CreateMaintanceView.xaml;Views\CreateManagerView.xaml;Views\CreateMedicalInstitutionView.xaml;Views\CreateReportView.xaml;Views\MaintanceView.xaml;Views\ManagerView.xaml;Views\MasterView.xaml;Views\UpdateDoctorView.xaml;Views\UpdateHospitalView.xaml;Views\UpdateMaintanceView.xaml;Views\UpdateManagerView.xaml;
 
 False
 

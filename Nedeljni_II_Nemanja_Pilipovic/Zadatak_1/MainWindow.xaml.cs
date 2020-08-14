@@ -81,16 +81,27 @@ namespace Zadatak_1
                             else if(user is tblClinicMaintance)
                             {
                                 _logged = true;
-                                MaintanceView view = new MaintanceView(user as tblClinicMaintance); ;
+                                MaintanceView view = new MaintanceView(user as tblClinicMaintance);
                                 view.ShowDialog();
                                 ClearCredentials();
                                 return;
                             }
                             else if(user is tblClinicManager)
                             {
-                                
+                                _logged = true;
+                                ManagerView view = new ManagerView(user as tblClinicManager);
+                                view.ShowDialog();
+                                ClearCredentials();
+                                return;
                             }
-                            //TODO ovde ide provera za ostale tipove
+                            else if (true)
+                            {
+                                //Ovde za doktora
+                            }
+                            else
+                            {
+                                //ovde za pacijenta
+                            }
                         }
                     }
                 }
