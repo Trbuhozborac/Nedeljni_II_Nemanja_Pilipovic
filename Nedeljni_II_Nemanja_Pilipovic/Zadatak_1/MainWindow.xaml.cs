@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Documents;
+using System.Windows.Input;
 using Zadatak_1.Models;
+using Zadatak_1.ViewModels;
 using Zadatak_1.Views;
 
 namespace Zadatak_1
@@ -21,6 +24,7 @@ namespace Zadatak_1
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainViewModel(this);
         }
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
@@ -53,7 +57,14 @@ namespace Zadatak_1
                         {
                             users.Add(manager as IUser);
                         }
-                        //TODO treba proci kroz ostale vrste korisnika
+                        foreach (tblClinicDoctor doctor in db.tblClinicDoctors)
+                        {
+                            users.Add(doctor as IUser);
+                        }
+                        foreach (tblClinicPatient patient in db.tblClinicPatients)
+                        {
+                            users.Add(patient as IUser);
+                        }
                     }
 
                     foreach (IUser user in users)
@@ -94,13 +105,21 @@ namespace Zadatak_1
                                 ClearCredentials();
                                 return;
                             }
-                            else if (true)
+                            else if (user is tblClinicDoctor)
                             {
-                                //Ovde za doktora
+                                _logged = true;
+                                DoctorView view = new DoctorView();
+                                view.ShowDialog();
+                                ClearCredentials();
+                                return;
                             }
                             else
                             {
-                                //ovde za pacijenta
+                                _logged = true;
+                                PatientView view = new PatientView();
+                                view.ShowDialog();
+                                ClearCredentials();
+                                return;
                             }
                         }
                     }
@@ -166,6 +185,33 @@ namespace Zadatak_1
                 return false;
             }
 
+        }
+
+        /// <summary>
+        /// Validate that User input are just letters
+        /// </summary>
+        private void LetterValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^a-zA-Z ]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        /// <summary>
+        /// Validate that User input is just letters and digits
+        /// </summary>
+        private void LetterAndNumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^a-zA-Z0-9 ]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        /// <summary>
+        /// Validate that User input is just numbers
+        /// </summary>
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }
