@@ -39,7 +39,7 @@
             Content="Submit" Margin="60 10" FontSize="18"/>
 
         <Button Grid.Column="1" Grid.Row="6" Name="btnRegisterPatient" Content="Register Patient" Width="100" HorizontalAlignment="Center"
-                Command="{Binding RegisterPatient, UpdateSourceTrigger=PropertyChanged}" Margin="10"  FontSize="12" />
+                Command="{Binding Register, UpdateSourceTrigger=PropertyChanged}" Margin="10"  FontSize="12" />
        
     </Grid>
 </Window>
