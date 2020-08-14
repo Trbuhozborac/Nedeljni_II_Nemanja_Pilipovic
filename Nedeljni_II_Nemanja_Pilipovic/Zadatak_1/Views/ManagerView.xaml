@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zadatak_1.Views"
         mc:Ignorable="d"
-        Title="Manager" Height="200" Width="250">
+        Title="Manager" Height="400" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -19,17 +19,54 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
         <Button Grid.Column="1" Grid.Row="1" Name="btnCreateDoctor" Content="Create Doctor" 
-                Height="20" Width="150" HorizontalAlignment="Center"
-                Command="{Binding CreateDoctor, UpdateSourceTrigger=PropertyChanged}" Margin="15,10,0,0"/>
+                Height="20" Width="150" HorizontalAlignment="Left"
+                Command="{Binding CreateDoctor, UpdateSourceTrigger=PropertyChanged}" Margin="0,10,0,0"/>
        
 
-        <Button Grid.Column="1" Grid.Row="2" Name="btnLogout" Content="Logout" 
-                Height="20" Width="100" HorizontalAlignment="Center"
-                Command="{Binding Logout, UpdateSourceTrigger=PropertyChanged}" Margin="15,15,0,0"/>
+        <Button Grid.Column="3" Grid.Row="1" Name="btnLogout" Content="Logout" 
+                Height="20" Width="150" HorizontalAlignment="Right"
+                Command="{Binding Logout, UpdateSourceTrigger=PropertyChanged}" Margin="0,10,0,0"/>
+        
+        <TextBlock Grid.Column="2" Grid.Row="3" Text="Your Doctors" FontSize="18" HorizontalAlignment="Center" />
+
+        <Grid Grid.Column="1" Grid.Row="4" Height="auto" Width="auto" Grid.ColumnSpan="3"  Margin="0,5,0,0">
+            <DataGrid x:Name="dgAllDeoctors" ItemsSource="{Binding AllDoctors, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False"
+                      IsReadOnly="True" HeadersVisibility="Column" Margin="0,10,0,0"
+                      SelectedItem="{Binding Doctor, UpdateSourceTrigger=PropertyChanged}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Surname" Binding="{Binding Surname}"/>
+                    <DataGridTextColumn Header="ID Number" Binding="{Binding IDNumber}"/>
+                    <DataGridTextColumn Header="Gender" Binding="{Binding Gender}"/>
+                    <DataGridTextColumn Header="Date of Birth" Binding="{Binding DateOfBirth }"/>
+                    <DataGridTextColumn Header="Citizenship " Binding="{Binding Citizenship}"/>
+                    <DataGridTextColumn Header="Username" Binding="{Binding Username}"/>
+                    <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
+                    <DataGridTextColumn Header="Unique Number" Binding="{Binding UniqueNumber}"/>
+                    <DataGridTextColumn Header="Account Number" Binding="{Binding AccountNumber}"/>
+                    <DataGridTextColumn Header="Department" Binding="{Binding Department}"/>
+                    <DataGridTextColumn Header="Shift" Binding="{Binding Shift}"/>
+
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Name="btnUpdate" Content="Update"
+                                    Command="{Binding DataContext.UpdateDoctor, UpdateSourceTrigger=PropertyChanged, 
+                                RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
+                                    Margin="4" FontWeight="Bold"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
 
     </Grid>
 </Window>
