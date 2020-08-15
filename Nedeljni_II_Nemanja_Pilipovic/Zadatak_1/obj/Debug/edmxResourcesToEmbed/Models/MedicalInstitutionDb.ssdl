@@ -87,6 +87,15 @@
     <Property Name="DoctorUniqueNumber" Type="int" />
     <Property Name="FKDoctor" Type="int" />
   </EntityType>
+  <EntityType Name="tblExaminations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FKPatient" Type="int" />
+    <Property Name="FKDoctor" Type="int" />
+    <Property Name="NumberOfTries" Type="int" />
+  </EntityType>
   <EntityType Name="tblMedicalInstitutions">
     <Key>
       <PropertyRef Name="Id" />
@@ -113,7 +122,7 @@
     <Property Name="Description" Type="varchar" MaxLength="30" />
     <Property Name="FKClinicMaintance" Type="int" />
   </EntityType>
-  <Association Name="FK__tblClinic__FKDoc__0A3E6E7F">
+  <Association Name="FK__tblClinic__FKDoc__0A096455">
     <End Role="tblClinicDoctors" Type="Self.tblClinicDoctors" Multiplicity="0..1" />
     <End Role="tblClinicPatients" Type="Self.tblClinicPatients" Multiplicity="*" />
     <ReferentialConstraint>
@@ -125,7 +134,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tblClinic__FKMan__094A4A46">
+  <Association Name="FK__tblClinic__FKMan__0915401C">
     <End Role="tblClinicManagers" Type="Self.tblClinicManagers" Multiplicity="0..1" />
     <End Role="tblClinicDoctors" Type="Self.tblClinicDoctors" Multiplicity="*" />
     <ReferentialConstraint>
@@ -137,7 +146,31 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tblReport__FKCli__0B3292B8">
+  <Association Name="FK__tblExamin__FKDoc__0CE5D100">
+    <End Role="tblClinicDoctors" Type="Self.tblClinicDoctors" Multiplicity="0..1" />
+    <End Role="tblExaminations" Type="Self.tblExaminations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblClinicDoctors">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblExaminations">
+        <PropertyRef Name="FKDoctor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblExamin__FKPat__0BF1ACC7">
+    <End Role="tblClinicPatients" Type="Self.tblClinicPatients" Multiplicity="0..1" />
+    <End Role="tblExaminations" Type="Self.tblExaminations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblClinicPatients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblExaminations">
+        <PropertyRef Name="FKPatient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblReport__FKCli__0AFD888E">
     <End Role="tblClinicMaintances" Type="Self.tblClinicMaintances" Multiplicity="0..1" />
     <End Role="tblReports" Type="Self.tblReports" Multiplicity="*" />
     <ReferentialConstraint>
@@ -155,17 +188,26 @@
     <EntitySet Name="tblClinicMaintances" EntityType="Self.tblClinicMaintances" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblClinicManagers" EntityType="Self.tblClinicManagers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblClinicPatients" EntityType="Self.tblClinicPatients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblExaminations" EntityType="Self.tblExaminations" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblMedicalInstitutions" EntityType="Self.tblMedicalInstitutions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblReports" EntityType="Self.tblReports" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__tblClinic__FKDoc__0A3E6E7F" Association="Self.FK__tblClinic__FKDoc__0A3E6E7F">
+    <AssociationSet Name="FK__tblClinic__FKDoc__0A096455" Association="Self.FK__tblClinic__FKDoc__0A096455">
       <End Role="tblClinicDoctors" EntitySet="tblClinicDoctors" />
       <End Role="tblClinicPatients" EntitySet="tblClinicPatients" />
     </AssociationSet>
-    <AssociationSet Name="FK__tblClinic__FKMan__094A4A46" Association="Self.FK__tblClinic__FKMan__094A4A46">
+    <AssociationSet Name="FK__tblClinic__FKMan__0915401C" Association="Self.FK__tblClinic__FKMan__0915401C">
       <End Role="tblClinicManagers" EntitySet="tblClinicManagers" />
       <End Role="tblClinicDoctors" EntitySet="tblClinicDoctors" />
     </AssociationSet>
-    <AssociationSet Name="FK__tblReport__FKCli__0B3292B8" Association="Self.FK__tblReport__FKCli__0B3292B8">
+    <AssociationSet Name="FK__tblExamin__FKDoc__0CE5D100" Association="Self.FK__tblExamin__FKDoc__0CE5D100">
+      <End Role="tblClinicDoctors" EntitySet="tblClinicDoctors" />
+      <End Role="tblExaminations" EntitySet="tblExaminations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblExamin__FKPat__0BF1ACC7" Association="Self.FK__tblExamin__FKPat__0BF1ACC7">
+      <End Role="tblClinicPatients" EntitySet="tblClinicPatients" />
+      <End Role="tblExaminations" EntitySet="tblExaminations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblReport__FKCli__0AFD888E" Association="Self.FK__tblReport__FKCli__0AFD888E">
       <End Role="tblClinicMaintances" EntitySet="tblClinicMaintances" />
       <End Role="tblReports" EntitySet="tblReports" />
     </AssociationSet>

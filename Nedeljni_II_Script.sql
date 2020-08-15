@@ -124,8 +124,20 @@ Description varchar(30),
 FKClinicMaintance int
 );
 
+CREATE TABLE tblExaminations
+(
+Id int PRIMARY KEY IDENTITY (1,1),
+FKPatient int,
+FKDoctor int,
+NumberOfTries int
+);
+
 ALTER TABLE tblClinicDoctors ADD FOREIGN KEY(FKManager) REFERENCES tblClinicManagers(Id);
 
 ALTER TABLE tblClinicPatients ADD FOREIGN KEY(FKDoctor) REFERENCES tblClinicDoctors(Id);
 
 ALTER TABLE tblReports ADD FOREIGN KEY(FKClinicMaintance) REFERENCES tblClinicMaintances(Id);
+
+ALTER TABLE tblExaminations ADD FOREIGN KEY(FKPatient) REFERENCES tblClinicPatients(Id);
+
+ALTER TABLE tblExaminations ADD FOREIGN KEY(FKDoctor) REFERENCES tblClinicDoctors(Id);

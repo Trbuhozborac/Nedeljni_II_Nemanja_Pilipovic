@@ -95,6 +95,9 @@
     <Compile Include="Models\tblClinicPatient.cs">
       <DependentUpon>MedicalInstitutionDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tblExamination.cs">
+      <DependentUpon>MedicalInstitutionDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tblMedicalInstitution.cs">
       <DependentUpon>MedicalInstitutionDb.tt</DependentUpon>
     </Compile>
@@ -286,6 +289,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="ClientAccess.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Models\MedicalInstitutionDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MedicalInstitutionDb.edmx</DependentUpon>
@@ -296,12 +305,6 @@
       <DependentUpon>MedicalInstitutionDb.edmx</DependentUpon>
       <LastGenOutput>MedicalInstitutionDb.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="ClientAccess.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
