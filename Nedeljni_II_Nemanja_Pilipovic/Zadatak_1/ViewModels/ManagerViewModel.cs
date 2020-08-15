@@ -121,6 +121,7 @@ namespace Zadatak_1.ViewModels
         {
             CreateDoctorView view = new CreateDoctorView(User);
             view.ShowDialog();
+            AllDoctors = GetAllDoctorsOfThisManager();
         }
 
         private bool CanCreateDoctorExecute()

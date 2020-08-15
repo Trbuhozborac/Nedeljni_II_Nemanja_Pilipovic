@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zadatak_1.Views"
         mc:Ignorable="d"
-        Title="PatientView" Height="450" Width="800">
+        Title="PatientView" Height="200" Width="220">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Column="1" Grid.Row="1" Name="btnRequestExemination" Content="Request Examination"
+                Height="20" Width="150" HorizontalAlignment="Center"
+                Command="{Binding RequestExamination, UpdateSourceTrigger=PropertyChanged}" Margin="0,10,0,0"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="2" FontSize="10" Text="{Binding RequestText, UpdateSourceTrigger=PropertyChanged}"
+                   Margin="0,10,0,0"/>
+
     </Grid>
 </Window>

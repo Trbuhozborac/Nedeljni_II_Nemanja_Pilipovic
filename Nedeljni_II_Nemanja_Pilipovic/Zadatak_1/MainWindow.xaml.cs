@@ -108,7 +108,7 @@ namespace Zadatak_1
                             else if (user is tblClinicDoctor)
                             {
                                 _logged = true;
-                                DoctorView view = new DoctorView();
+                                DoctorView view = new DoctorView(user as tblClinicDoctor);
                                 view.ShowDialog();
                                 ClearCredentials();
                                 return;
@@ -116,7 +116,7 @@ namespace Zadatak_1
                             else
                             {
                                 _logged = true;
-                                PatientView view = new PatientView();
+                                PatientView view = new PatientView(user as tblClinicPatient);
                                 view.ShowDialog();
                                 ClearCredentials();
                                 return;

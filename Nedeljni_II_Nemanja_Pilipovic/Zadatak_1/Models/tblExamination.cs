@@ -17,6 +17,7 @@ namespace Zadatak_1.Models
         public int Id { get; set; }
         public Nullable<int> FKPatient { get; set; }
         public Nullable<int> FKDoctor { get; set; }
+        public Nullable<bool> CanPopulateRequest { get; set; }
         public Nullable<int> NumberOfTries { get; set; }
     
         public virtual tblClinicDoctor tblClinicDoctor { get; set; }

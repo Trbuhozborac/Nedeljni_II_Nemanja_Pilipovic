@@ -3,6 +3,8 @@ CREATE DATABASE MedicalInstitutionDb
 GO
 
 USE MedicalInstitutionDb
+IF EXISTS (SELECT NAME FROM sys.sysobjects WHERE NAME = 'tblExaminations')
+DROP TABLE tblExaminations
 IF EXISTS (SELECT NAME FROM sys.sysobjects WHERE NAME = 'tblMedicalInstitutions')
 DROP TABLE tblMedicalInstitutions
 IF EXISTS (SELECT NAME FROM sys.sysobjects WHERE NAME = 'tblClinicAdmins')
@@ -129,6 +131,7 @@ CREATE TABLE tblExaminations
 Id int PRIMARY KEY IDENTITY (1,1),
 FKPatient int,
 FKDoctor int,
+CanPopulateRequest bit,
 NumberOfTries int
 );
 

@@ -4,20 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1474db0806f24ead9b72a270e937a32d" Name="Diagram1">
+      <Diagram DiagramId="7ee1a01611b34fa6a6a723c12b38cd69" Name="Diagram1">
         <EntityTypeShape EntityType="MedicalInstitutionDbModel.tblClinicAdmin" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MedicalInstitutionDbModel.tblClinicDoctor" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="MedicalInstitutionDbModel.tblClinicMaintance" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="MedicalInstitutionDbModel.tblClinicManager" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="MedicalInstitutionDbModel.tblClinicPatient" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MedicalInstitutionDbModel.tblExamination" Width="1.5" PointX="7.5" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalInstitutionDbModel.tblExamination" Width="1.5" PointX="7.5" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="MedicalInstitutionDbModel.tblMedicalInstitution" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MedicalInstitutionDbModel.tblReport" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
-        <AssociationConnector Association="MedicalInstitutionDbModel.FK__tblClinic__FKDoc__0A096455" ManuallyRouted="false" />
-        <AssociationConnector Association="MedicalInstitutionDbModel.FK__tblClinic__FKMan__0915401C" ManuallyRouted="false" />
-        <AssociationConnector Association="MedicalInstitutionDbModel.FK__tblExamin__FKDoc__0CE5D100" ManuallyRouted="false" />
-        <AssociationConnector Association="MedicalInstitutionDbModel.FK__tblReport__FKCli__0AFD888E" ManuallyRouted="false" />
-        <AssociationConnector Association="MedicalInstitutionDbModel.FK__tblExamin__FKPat__0BF1ACC7" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalInstitutionDbModel.FK__tblClinic__FKDoc__5A254709" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalInstitutionDbModel.FK__tblClinic__FKMan__593122D0" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalInstitutionDbModel.FK__tblExamin__FKDoc__5D01B3B4" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalInstitutionDbModel.FK__tblReport__FKCli__5B196B42" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalInstitutionDbModel.FK__tblExamin__FKPat__5C0D8F7B" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
