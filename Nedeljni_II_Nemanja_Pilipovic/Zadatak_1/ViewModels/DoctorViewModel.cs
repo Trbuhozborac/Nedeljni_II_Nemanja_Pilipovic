@@ -153,25 +153,48 @@ namespace Zadatak_1.ViewModels
         {
             Random r = new Random();
             int randomInt = r.Next(0, 2);
-            
+
             //Proverava da li pacijent ima simptome
-            if(randomInt == 0)
+
+
+            //Ako Nema Simptome
+            if (randomInt == 0) 
             {
-                //Nema simptome => Pacijent moze da popuni izvestaj
-                try
+                //Pacijent moze poceti sa popunjavanjem zahteva
+                //Postavljamo CanPopulateRequest = true i Patient View moze da stisne dugme za request
+            }
+
+            //Ako Pacijent ima neki od simptoma
+            else if(randomInt == 1)
+            {
+                //Ako se pregledao samo jednom moze jos jednom
+                //Proverava se da li je broj pokusaja 0 -> ako je 0 to znaci da mu je sad prvi
+                if (true)
                 {
-                    using (MedicalInstitutionDbEntities db = new MedicalInstitutionDbEntities())
-                    {
-                        tblExamination examination = db.tblExaminations.Where(e => e.FKPatient == Patient.Id).FirstOrDefault();
-                        if(examination != null)
-                        {
-                            
-                        }
-                    }
+                    //Povecacemo broj pokusaja za jeadan
+                    //I zamolicemo pacijenta da podnese zahtev  za pregled jos jednom
                 }
-                catch (Exception ex)
+                
+                //Proverava se da li je pacijentu ovaj pregled drugi
+                else if(true)
                 {
-                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                    //Pravicemo Opet Random da proverimo da li je drugi put pozitivan ili negativan
+                    //Ako je drugi put pozitivan -> tj ima simptome virusa
+                    // -Pozitivan-
+                    if (true)
+                    {
+                        //Ako je pozitivan drugi put
+                        //Upisujemo ga u txt fajl
+                    }
+
+                    // -Negativan-
+                    //Moze popuniti zahtev za pregled
+                    else
+                    {
+                        //Postavljamo vrednost za popunjavanje zahteva na true
+                        //Kako bi mogao da stisne drugme Pacijent
+                    }
+                    
                 }
             }
         }
