@@ -18,6 +18,7 @@ namespace Zadatak_1.Models
         public tblClinicDoctor()
         {
             this.tblClinicPatients = new HashSet<tblClinicPatient>();
+            this.tblExaminations = new HashSet<tblExamination>();
         }
     
         public int Id { get; set; }
@@ -39,5 +40,7 @@ namespace Zadatak_1.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblClinicPatient> tblClinicPatients { get; set; }
         public virtual tblClinicManager tblClinicManager { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblExamination> tblExaminations { get; set; }
     }
 }

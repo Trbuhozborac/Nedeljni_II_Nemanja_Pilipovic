@@ -95,6 +95,9 @@
     <Compile Include="Models\tblClinicPatient.cs">
       <DependentUpon>MedicalInstitutionDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tblExamination.cs">
+      <DependentUpon>MedicalInstitutionDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tblMedicalInstitution.cs">
       <DependentUpon>MedicalInstitutionDb.tt</DependentUpon>
     </Compile>
@@ -109,10 +112,12 @@
     <Compile Include="ViewModels\CreateManagerViewModel.cs" />
     <Compile Include="ViewModels\CreateMedicalInstitutionViewModel.cs" />
     <Compile Include="ViewModels\CreateReportViewModel.cs" />
+    <Compile Include="ViewModels\DoctorViewModel.cs" />
     <Compile Include="ViewModels\MaintanceViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ManagerViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />
+    <Compile Include="ViewModels\PatientViewModel.cs" />
     <Compile Include="ViewModels\RegisterPatientViewModel.cs" />
     <Compile Include="ViewModels\UpdateDoctorViewModel.cs" />
     <Compile Include="ViewModels\UpdateHospitalViewModel.cs" />
@@ -286,6 +291,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="ClientAccess.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Models\MedicalInstitutionDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MedicalInstitutionDb.edmx</DependentUpon>
@@ -296,12 +307,6 @@
       <DependentUpon>MedicalInstitutionDb.edmx</DependentUpon>
       <LastGenOutput>MedicalInstitutionDb.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="ClientAccess.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

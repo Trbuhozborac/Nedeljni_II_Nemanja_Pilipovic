@@ -30,6 +30,7 @@ namespace Zadatak_1.Models
         public virtual DbSet<tblClinicMaintance> tblClinicMaintances { get; set; }
         public virtual DbSet<tblClinicManager> tblClinicManagers { get; set; }
         public virtual DbSet<tblClinicPatient> tblClinicPatients { get; set; }
+        public virtual DbSet<tblExamination> tblExaminations { get; set; }
         public virtual DbSet<tblMedicalInstitution> tblMedicalInstitutions { get; set; }
         public virtual DbSet<tblReport> tblReports { get; set; }
     }

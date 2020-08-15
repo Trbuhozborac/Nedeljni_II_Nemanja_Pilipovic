@@ -3,6 +3,8 @@ CREATE DATABASE MedicalInstitutionDb
 GO
 
 USE MedicalInstitutionDb
+IF EXISTS (SELECT NAME FROM sys.sysobjects WHERE NAME = 'tblExaminations')
+DROP TABLE tblExaminations
 IF EXISTS (SELECT NAME FROM sys.sysobjects WHERE NAME = 'tblMedicalInstitutions')
 DROP TABLE tblMedicalInstitutions
 IF EXISTS (SELECT NAME FROM sys.sysobjects WHERE NAME = 'tblClinicAdmins')
@@ -124,8 +126,21 @@ Description varchar(30),
 FKClinicMaintance int
 );
 
+CREATE TABLE tblExaminations
+(
+Id int PRIMARY KEY IDENTITY (1,1),
+FKPatient int,
+FKDoctor int,
+CanPopulateRequest bit,
+NumberOfTries int
+);
+
 ALTER TABLE tblClinicDoctors ADD FOREIGN KEY(FKManager) REFERENCES tblClinicManagers(Id);
 
 ALTER TABLE tblClinicPatients ADD FOREIGN KEY(FKDoctor) REFERENCES tblClinicDoctors(Id);
 
 ALTER TABLE tblReports ADD FOREIGN KEY(FKClinicMaintance) REFERENCES tblClinicMaintances(Id);
+
+ALTER TABLE tblExaminations ADD FOREIGN KEY(FKPatient) REFERENCES tblClinicPatients(Id);
+
+ALTER TABLE tblExaminations ADD FOREIGN KEY(FKDoctor) REFERENCES tblClinicDoctors(Id);

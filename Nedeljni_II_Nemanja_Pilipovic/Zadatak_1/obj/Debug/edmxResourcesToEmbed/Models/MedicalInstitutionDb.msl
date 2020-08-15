@@ -93,6 +93,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tblExaminations">
+      <EntityTypeMapping TypeName="MedicalInstitutionDbModel.tblExamination">
+        <MappingFragment StoreEntitySet="tblExaminations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FKPatient" ColumnName="FKPatient" />
+          <ScalarProperty Name="FKDoctor" ColumnName="FKDoctor" />
+          <ScalarProperty Name="CanPopulateRequest" ColumnName="CanPopulateRequest" />
+          <ScalarProperty Name="NumberOfTries" ColumnName="NumberOfTries" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tblMedicalInstitutions">
       <EntityTypeMapping TypeName="MedicalInstitutionDbModel.tblMedicalInstitution">
         <MappingFragment StoreEntitySet="tblMedicalInstitutions">

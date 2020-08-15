@@ -274,6 +274,13 @@ namespace Zadatak_1.ViewModels
                         {
                             tblClinicMaintance maintance = db.tblClinicMaintances.Where(m => m.Id == Maintance.Id).FirstOrDefault();
                             db.tblClinicMaintances.Remove(maintance);
+                            foreach (tblReport report in db.tblReports)
+                            {
+                                if(report.FKClinicMaintance == maintance.Id)
+                                {
+                                    db.tblReports.Remove(report);
+                                }
+                            }
                             db.SaveChanges();
                         }
                         MessageBox.Show("Maintance Deleted.");

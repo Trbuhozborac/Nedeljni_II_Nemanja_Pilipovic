@@ -142,6 +142,13 @@ namespace Zadatak_1.ViewModels
                     else
                     {
                         tblClinicMaintance m =  maintances.Dequeue();
+                        foreach (tblReport report in db.tblReports)
+                        {
+                            if(report.FKClinicMaintance == m.Id)
+                            {
+                                db.tblReports.Remove(report);
+                            }
+                        }
                         db.tblClinicMaintances.Remove(m);
                         db.tblClinicMaintances.Add(Maintance);
                         db.SaveChanges();
