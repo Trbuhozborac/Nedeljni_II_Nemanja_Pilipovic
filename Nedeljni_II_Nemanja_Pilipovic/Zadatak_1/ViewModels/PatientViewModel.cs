@@ -78,6 +78,19 @@ namespace Zadatak_1.ViewModels
             }
         }
 
+        private ICommand logout;
+        public ICommand Logout
+        {
+            get
+            {
+                if (logout == null)
+                {
+                    logout = new RelayCommand(param => LogoutExecute(), param => CanLogoutExecute());
+                }
+                return logout;
+            }
+        }
+
         #endregion
 
         #region Functions
@@ -110,7 +123,16 @@ namespace Zadatak_1.ViewModels
         private bool CanRequestExaminationeExecute()
         {
             return true;
-            //TODO ovdece ici proveravanjke jle moze opet da posalje
+        }
+
+        private void LogoutExecute()
+        {
+            patientView.Close();
+        }
+
+        private bool CanLogoutExecute()
+        {
+            return true;
         }
 
         #endregion

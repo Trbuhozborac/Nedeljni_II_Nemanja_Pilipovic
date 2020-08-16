@@ -109,6 +109,19 @@ namespace Zadatak_1.ViewModels
             }
         }
 
+        private ICommand logout;
+        public ICommand Logout
+        {
+            get
+            {
+                if (logout == null)
+                {
+                    logout = new RelayCommand(param => LogoutExecute(), param => CanLogoutExecute());
+                }
+                return logout;
+            }
+        }
+
         #endregion
 
         #region Functions
@@ -142,6 +155,18 @@ namespace Zadatak_1.ViewModels
             return true;
         }
 
+        private void LogoutExecute()
+        {
+            doctorView.Close();
+        }
+
+        private bool CanLogoutExecute()
+        {
+            return true;
+        }
+
+
+
         #endregion
 
         #region Progress Bar
@@ -154,48 +179,13 @@ namespace Zadatak_1.ViewModels
             Random r = new Random();
             int randomInt = r.Next(0, 2);
 
-            //Proverava da li pacijent ima simptome
-
-
-            //Ako Nema Simptome
-            if (randomInt == 0) 
+            if(randomInt == 0)
             {
-                //Pacijent moze poceti sa popunjavanjem zahteva
-                //Postavljamo CanPopulateRequest = true i Patient View moze da stisne dugme za request
+                MessageBox.Show("Patient have sympthoms...");
             }
-
-            //Ako Pacijent ima neki od simptoma
-            else if(randomInt == 1)
+            else
             {
-                //Ako se pregledao samo jednom moze jos jednom
-                //Proverava se da li je broj pokusaja 0 -> ako je 0 to znaci da mu je sad prvi
-                if (true)
-                {
-                    //Povecacemo broj pokusaja za jeadan
-                    //I zamolicemo pacijenta da podnese zahtev  za pregled jos jednom
-                }
-                
-                //Proverava se da li je pacijentu ovaj pregled drugi
-                else if(true)
-                {
-                    //Pravicemo Opet Random da proverimo da li je drugi put pozitivan ili negativan
-                    //Ako je drugi put pozitivan -> tj ima simptome virusa
-                    // -Pozitivan-
-                    if (true)
-                    {
-                        //Ako je pozitivan drugi put
-                        //Upisujemo ga u txt fajl
-                    }
-
-                    // -Negativan-
-                    //Moze popuniti zahtev za pregled
-                    else
-                    {
-                        //Postavljamo vrednost za popunjavanje zahteva na true
-                        //Kako bi mogao da stisne drugme Pacijent
-                    }
-                    
-                }
+                MessageBox.Show("Patient does not have sympthomps");
             }
         }
 

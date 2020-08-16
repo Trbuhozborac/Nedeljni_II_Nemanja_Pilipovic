@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\
+C:\Users\Pipi\Desktop\nedeljni\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\obj\Debug\
 Zadatak_1
 none
 false
 DEBUG;TRACE
-C:\Users\Pipi\Desktop\nedlejni 2\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\App.xaml
+C:\Users\Pipi\Desktop\nedeljni\Nedeljni_II_Nemanja_Pilipovic\Zadatak_1\App.xaml
 181915768574
 21769798553
 54208255625
-181788474188
+18395164737
 MainWindow.xaml;Views\AdminView.xaml;Views\CreateAdminView.xaml;Views\CreateDoctorView.xaml;Views\CreateMaintanceView.xaml;Views\CreateManagerView.xaml;Views\CreateMedicalInstitutionView.xaml;Views\CreateReportView.xaml;Views\DoctorView.xaml;Views\MaintanceView.xaml;Views\ManagerView.xaml;Views\MasterView.xaml;Views\PatientView.xaml;Views\RegisterPatientView.xaml;Views\UpdateDoctorView.xaml;Views\UpdateHospitalView.xaml;Views\UpdateMaintanceView.xaml;Views\UpdateManagerView.xaml;
 
 False
